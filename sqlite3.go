@@ -10,7 +10,8 @@
 package sqlite3
 
 /*
-#cgo CFLAGS: -std=gnu99
+#cgo !windows CFLAGS: -std=gnu99
+#cgo !windows CFLAGS: -Wno-deprecated-declarations
 #cgo CFLAGS: -DSQLITE_ENABLE_RTREE
 #cgo CFLAGS: -DSQLITE_THREADSAFE=1
 #cgo CFLAGS: -DHAVE_USLEEP=1
@@ -20,7 +21,6 @@ package sqlite3
 #cgo CFLAGS: -DSQLITE_OMIT_DEPRECATED
 #cgo CFLAGS: -DSQLITE_DEFAULT_WAL_SYNCHRONOUS=1
 #cgo CFLAGS: -DSQLITE_ENABLE_UPDATE_DELETE_LIMIT
-#cgo CFLAGS: -Wno-deprecated-declarations
 #cgo openbsd CFLAGS: -I/usr/local/include
 #cgo openbsd LDFLAGS: -L/usr/local/lib
 #ifndef USE_LIBSQLITE3
